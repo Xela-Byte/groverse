@@ -1,15 +1,14 @@
-import {View, SafeAreaView, FlatList} from 'react-native';
-import {homeStyle} from '../../../styles/HomeStyle';
-import Icon from 'react-native-vector-icons/Fontisto';
-import {appColors, fontSize, sizeBlock} from '../../../styles/UniversalStyle';
 import {useState} from 'react';
-import {Searchbar} from 'react-native-paper';
+import {FlatList, SafeAreaView, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
-import CustomText from '../../../components/text/CustomText';
+import {Searchbar} from 'react-native-paper';
 import MenuIcon from 'react-native-vector-icons/Entypo';
-import {HomeScreenProps} from '../../../types/navigation/HomeNavigationType';
+import Icon from 'react-native-vector-icons/Fontisto';
 import CustomPressable from '../../../components/button/CustomPressable';
-import {nanoid} from '@reduxjs/toolkit';
+import CustomText from '../../../components/text/CustomText';
+import {homeStyle} from '../../../styles/HomeStyle';
+import {appColors, fontSize, sizeBlock} from '../../../styles/UniversalStyle';
+import {HomeScreenProps} from '../../../types/navigation/HomeNavigationType';
 
 const HomeScreen = ({navigation}: HomeScreenProps) => {
   const [searchQuery, setSearchQuery] = useState<string>('');

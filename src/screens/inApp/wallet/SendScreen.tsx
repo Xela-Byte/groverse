@@ -1,23 +1,17 @@
 import {useState} from 'react';
-import {SafeAreaView, ScrollView, View} from 'react-native';
+import {useForm} from 'react-hook-form';
+import {SafeAreaView, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Fontisto';
 import ClipboardIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import EyeIcon from '../../../assets/svgs/EyeIcon';
 import CustomButton from '../../../components/button/CustomButton';
 import HeaderComponent from '../../../components/header/HeaderComponent';
+import CustomInput from '../../../components/input/CustomInput';
 import CustomText from '../../../components/text/CustomText';
-import {
-  appColors,
-  borderRadius,
-  fontSize,
-  screenHeight,
-  sizeBlock,
-} from '../../../styles/UniversalStyle';
+import ConfirmTransferTab from '../../../components/wallet/ConfirmTransferTab';
+import {appColors, fontSize, sizeBlock} from '../../../styles/UniversalStyle';
 import {walletStyle} from '../../../styles/WalletStyle';
 import {SendScreenProps} from '../../../types/navigation/WalletNavigationType';
-import {useForm} from 'react-hook-form';
-import CustomInput from '../../../components/input/CustomInput';
-import ConfirmTransferTab from '../../../components/wallet/ConfirmTransferTab';
 
 type FormValues = {};
 
@@ -29,7 +23,7 @@ const SendScreen = ({navigation}: SendScreenProps) => {
 
   return (
     <>
-      {/* <SafeAreaView style={walletStyle.container}>
+      <SafeAreaView style={walletStyle.container}>
         <View style={walletStyle.content}>
           <HeaderComponent
             title="Transfer Funds"
@@ -134,7 +128,7 @@ const SendScreen = ({navigation}: SendScreenProps) => {
             title="Transfer"
           />
         </View>
-      </SafeAreaView> */}
+      </SafeAreaView>
 
       <ConfirmTransferTab
         navigation={navigation}
