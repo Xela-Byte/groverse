@@ -27,6 +27,10 @@ const BottomTabComponent = ({
     'SendScreen',
     'ConfirmTransferScreen',
     'TransferSuccessScreen',
+    'PinCodeScreen',
+    'DetailsScreen',
+    'EditScreen',
+    'ReferralScreen',
   ];
 
   const [activeRouteName, setActiveRouteName] = useState<string | undefined>(

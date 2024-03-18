@@ -27,4 +27,10 @@ export const bottomTabLinks: BottomTabLinkType[] = [
     activeLinkIcon: 'wallet',
     inactiveLinkIcon: 'wallet-outline',
   },
+  {
+    key: nanoid(),
+    linkText: 'Profile',
+    activeLinkIcon: 'person',
+    inactiveLinkIcon: 'person-outline',
+  },
 ];

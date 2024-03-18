@@ -6,15 +6,9 @@ import {
   sizeBlock,
   universalStyle,
 } from './UniversalStyle';
+import useHexToRGBA from '../utils/hooks/useHexToRGBA';
 
-const spacing = sizeBlock.getWidthSize(20);
-const pinSpacing = sizeBlock.getWidthSize(10);
-const pinLength = 4;
-const pinContainerSize = screenWidth / 2;
-const pinMaxSize = pinContainerSize / pinLength;
-const pinSize = pinMaxSize - pinSpacing;
-
-export const pinCodeStyle = StyleSheet.create({
+export const profileStyle = StyleSheet.create({
   container: {
     ...universalStyle.container,
   },
@@ -32,19 +26,15 @@ export const pinCodeStyle = StyleSheet.create({
     marginRight: 'auto',
     marginTop: sizeBlock.getHeightSize(50),
   },
-  text: {
-    ...universalStyle.centering,
-    paddingVertical: sizeBlock.getHeightSize(30),
+  tabContainer: {
+    paddingVertical: sizeBlock.getHeightSize(50),
+    rowGap: sizeBlock.getHeightSize(20),
   },
-  padContainer: {
-    ...universalStyle.centering,
-    flexDirection: 'column',
-  },
-  pinContent: {
-    flexDirection: 'row',
-    gap: pinSpacing * 2,
-    marginBottom: spacing * 2,
-    height: pinSize * 2,
-    alignItems: 'flex-end',
+  tabContent: {
+    padding: sizeBlock.getWidthSize(15),
+    backgroundColor: useHexToRGBA(appColors.white, 0.1),
+    borderRadius: borderRadius.small,
+    ...universalStyle.verticalCentering,
+    columnGap: sizeBlock.getWidthSize(10),
   },
 });

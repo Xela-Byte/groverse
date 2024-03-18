@@ -3,24 +3,22 @@ import BottomSheet, {
   BottomSheetView,
 } from '@gorhom/bottom-sheet';
 import {useCallback, useEffect, useRef} from 'react';
-import {BackHandler, StyleSheet, Text, View} from 'react-native';
-import {
-  screenHeight,
-  screenWidth,
-  universalStyle,
-} from '../../styles/UniversalStyle';
+import {StyleSheet, View} from 'react-native';
+import Icon from 'react-native-vector-icons/Entypo';
 import {
   appColors,
   borderRadius,
   fontSize,
+  screenHeight,
+  screenWidth,
   sizeBlock,
+  universalStyle,
 } from '../../styles/UniversalStyle';
-import Icon from 'react-native-vector-icons/Entypo';
-import CustomText from '../text/CustomText';
+import {SendScreenProps} from '../../types/navigation/WalletNavigationType';
+import useBackHandler from '../../utils/hooks/useBackhandler';
 import useHexToRGBA from '../../utils/hooks/useHexToRGBA';
 import CustomButton from '../button/CustomButton';
-import useBackHandler from '../../utils/hooks/useBackhandler';
-import {SendScreenProps} from '../../types/navigation/WalletNavigationType';
+import CustomText from '../text/CustomText';
 
 type Props = {
   showBottomTab: boolean;
@@ -42,7 +40,7 @@ const ConfirmTransferTab = ({
   const handlePayment = () => {
     bottomSheetRef.current?.close();
     setShowBottomTab(false);
-    navigation.navigate('TransferSuccessScreen');
+    navigation.navigate('PinCodeScreen');
   };
 
   useBackHandler(() => {

@@ -6,6 +6,7 @@ import ReceiveScreen from '../../../screens/inApp/wallet/ReceiveScreen';
 import SendScreen from '../../../screens/inApp/wallet/SendScreen';
 import ConfirmTransferScreen from '../../../screens/inApp/wallet/TransferSuccessScreen';
 import TransferSuccessScreen from '../../../screens/inApp/wallet/TransferSuccessScreen';
+import PinCodeScreen from '../../../screens/auth/PinCodeScreen';
 
 const WalletStack = () => {
   const Stack = createNativeStackNavigator<WalletStackParamList>();
@@ -23,6 +24,7 @@ const WalletStack = () => {
           name="TransferSuccessScreen"
           component={TransferSuccessScreen}
         />
+        <Stack.Screen name="PinCodeScreen" component={PinCodeScreen} />
       </Stack.Navigator>
     </>
   );

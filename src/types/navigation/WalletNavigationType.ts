@@ -5,6 +5,7 @@ export type WalletStackParamList = {
   ReceiveScreen: undefined;
   SendScreen: undefined;
   TransferSuccessScreen: undefined;
+  PinCodeScreen: undefined;
 };
 
 export type WalletScreenProps = {
@@ -21,4 +22,8 @@ export type SendScreenProps = {
 
 export type TransferSuccessScreenProps = {
   navigation: NavigationProp<WalletStackParamList, 'TransferSuccessScreen'>;
+};
+
+export type PinCodeScreenProps = {
+  navigation: NavigationProp<WalletStackParamList, 'PinCodeScreen'>;
 };

@@ -6,12 +6,21 @@ import CustomText from '../../../components/text/CustomText';
 import {successStyle} from '../../../styles/SuccessStyle';
 import {appColors, fontSize, sizeBlock} from '../../../styles/UniversalStyle';
 import {TransferSuccessScreenProps} from '../../../types/navigation/WalletNavigationType';
+import useBackHandler from '../../../utils/hooks/useBackhandler';
 
 const TransferSuccessScreen = ({navigation}: TransferSuccessScreenProps) => {
+  useBackHandler(() => {
+    navigation.navigate('WalletScreen');
+    return true;
+  });
+
   return (
     <SafeAreaView style={successStyle.container}>
       <View style={successStyle.content}>
         <HeaderComponent
+          onPress={() => {
+            navigation.navigate('WalletScreen');
+          }}
           navigation={navigation}
           title="Transfer Complete"
           showIcon={false}

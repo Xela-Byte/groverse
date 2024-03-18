@@ -10,7 +10,7 @@ import {
 } from '../../styles/UniversalStyle';
 import {homeStyle} from '../../styles/HomeStyle';
 import {FlatList} from 'react-native';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import * as Animatable from 'react-native-animatable';
 import DeleteIcon from 'react-native-vector-icons/FontAwesome6';
 import FingerPrintIcon from 'react-native-vector-icons/Entypo';
@@ -19,10 +19,7 @@ import {pinCodeStyle} from '../../styles/pinCodeStyle';
 import CustomPressable from '../../components/button/CustomPressable';
 import CustomText from '../../components/text/CustomText';
 import HeaderComponent from '../../components/header/HeaderComponent';
-
-type Props = {
-  navigation: any;
-};
+import {PinCodeScreenProps} from '../../types/navigation/WalletNavigationType';
 
 const dialPad = [1, 2, 3, 4, 5, 6, 7, 8, 9, '', 0, 'del'];
 
@@ -31,13 +28,8 @@ type DialPadProps = {
 };
 
 const spacing = sizeBlock.getWidthSize(20);
-const pinSpacing = sizeBlock.getWidthSize(10);
-const pinLength = 4;
-const pinContainerSize = screenWidth / 2;
-const pinMaxSize = pinContainerSize / pinLength;
-const pinSize = pinMaxSize - pinSpacing;
 
-const PinCodeScreen = ({navigation}: Props) => {
+const PinCodeScreen = ({navigation}: PinCodeScreenProps) => {
   const dialPadSize = screenWidth * 0.16;
   const pinLength = 6;
   const [code, setCode] = useState<number[]>([]);
@@ -132,6 +124,13 @@ const PinCodeScreen = ({navigation}: Props) => {
       />
     );
   };
+
+  useEffect(() => {
+    if (code.length === 6) {
+      navigation.navigate('TransferSuccessScreen');
+    }
+  }, [code]);
+
   return (
     <View style={pinCodeStyle.container}>
       <View style={pinCodeStyle.content}>
